@@ -57,9 +57,9 @@ def handler(context, event):
         csv_path = event.body.decode('utf-8')
         if csv_path.strip():
             ingest_to_kv(csv_path, context)
-            return context.Response(body='csv-to-hive entry registered successful', headers={},
+            return context.Response(body='csv-to-hive-catalog entry registered successful', headers={},
                                     content_type='text/plain', status_code=200)
-        return context.Response(body='csv-to-hive entry failed as path is missing', headers={},
+        return context.Response(body='csv-to-hive-catalog entry failed as path is missing', headers={},
                                 content_type='text/plain', status_code=300)
     except Exception as e:
         context.logger.error('csv path ingestion job failed', e)
