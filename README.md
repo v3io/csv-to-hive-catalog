@@ -22,3 +22,5 @@ eg2. curl <nulcio_function_endpoint> -d '<container_name>/folder1/
 curl http://3.1.134.4:30433/ -d 'bigdata/new.csv'
 
 ##### Hive catalog will be accessible from the kv table --> csv_to_hive_catalog
+
+![sampel KV table](../master/images/hive_catalog_kv.png)
