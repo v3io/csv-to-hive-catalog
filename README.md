@@ -1,7 +1,7 @@
 # csv-to-hive-catalog
 this utility allows you to automatically create external hive tables on the csv files ingested in v3io.
 
-##Setup :
+## Setup :
 #### Deployment of Cron
 currently the cron is set to run every 2 minutes
 1) git clone https://github.com/v3io/csv-to-hive-catalog.git
@@ -14,7 +14,7 @@ currently the cron is set to run every 2 minutes
 nuclio function can be deployed by using the import functionality of nuclio UI.
 the function yaml is located in nuclio/csv2hive.yaml
 
-####Usage:
+#### Usage:
 use the nuclio function endpoints to send the path of the csv as the payload in the following format.
 eg1. curl <nulcio_function_endpoint> -d '<container_name>/folder1/sample.csv'
 eg2. curl <nulcio_function_endpoint> -d '<container_name>/folder1/
