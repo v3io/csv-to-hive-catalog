@@ -1,5 +1,5 @@
 #!/bin/bash
-source conf/env.conf
+source csv-to-hive-catalog/conf/env.conf
 
 export KUBECTL_PATH=/usr/local/bin/
 export PATH=$PATH:${KUBECTL_PATH}
