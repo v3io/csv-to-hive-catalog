@@ -13,9 +13,11 @@ from requests.auth import HTTPBasicAuth
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 NGINX_HOST = sys.argv[1]
+IGZ_USER = sys.argv[2]
+IGZ_PASS = sys.argv[3]
+
 CONTAINER_NAME = os.environ.get('CONTAINER_NAME', "bigdata")
-IGZ_PASS = os.environ.get('IGZ_PASS', "datal@ke!")
-IGZ_USER = os.environ.get('IGZ_USER', "iguazio")
+
 CSV_TO_HIVE_KV = os.environ.get('CSV_TO_HIVE_KV', "csv_to_hive_catalog")
 HIVE_SCHEMA = os.environ.get('HIVE_SCHEMA', 'default')
 

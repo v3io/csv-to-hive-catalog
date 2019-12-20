@@ -3,13 +3,13 @@ source conf/env.conf
 
 
 #copy source files to v3io
-command1="curl --request PUT  --url ${v3io_api_endpoint_host}/${v3io_container}/csv2hive/src/generate_hive_tables.py -H x-v3io-session-key:${access_key} -H Content-Type:application/x-www-form-urlencoded --insecure --data $PWD/src/generate_hive_tables.py"
+command1="curl --request PUT  --url ${v3io_api_endpoint_host}/${v3io_container}/csv2hive/src/generate_hive_tables.py -H x-v3io-session-key:${access_key} -H Content-Type:application/x-www-form-urlencoded --insecure --data-binary "@$PWD/src/generate_hive_tables.py""
 
 #copy dependency files to v3io
-command2="curl --request PUT  --url ${v3io_api_endpoint_host}/${v3io_container}/csv2hive/config/requirements.txt -H x-v3io-session-key:${access_key} -H Content-Type:application/x-www-form-urlencoded --insecure --data $PWD/conf/requirements.txt"
+command2="curl --request PUT  --url ${v3io_api_endpoint_host}/${v3io_container}/csv2hive/config/requirements.txt -H x-v3io-session-key:${access_key} -H Content-Type:application/x-www-form-urlencoded --insecure --data-binary "@$PWD/conf/requirements.txt""
 
 #copy sh files to v3io
-command3="curl --request PUT  --url ${v3io_api_endpoint_host}/${v3io_container}/csv2hive/sh/generate_hive_tables.sh -H x-v3io-session-key:${access_key} -H Content-Type:application/x-www-form-urlencoded --insecure --data $PWD/sh/generate_hive_tables.sh"
+command3="curl --request PUT  --url ${v3io_api_endpoint_host}/${v3io_container}/csv2hive/sh/generate_hive_tables.sh -H x-v3io-session-key:${access_key} -H Content-Type:application/x-www-form-urlencoded --insecure --data-binary "@$PWD/sh/generate_hive_tables.sh""
 
 $command1
 $command2
@@ -24,4 +24,3 @@ echo "${cron_command}" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
-
