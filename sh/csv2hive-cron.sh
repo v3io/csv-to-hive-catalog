@@ -17,5 +17,5 @@ shell_container=`kubectl -n default-tenant get pods --no-headers -o custom-colum
 echo $shell_container 2>&1 | tee -a $log_file
 
 #spark-submit
-spark_command="chmod 755 /v3io/bigdata/csv2hive/config/generate_hive_tables.sh;/v3io/bigdata/csv2hive/config/./generate_hive_tables.sh $nginx_host"
+spark_command="chmod 755 /v3io/bigdata/csv2hive/sh/generate_hive_tables.sh;/v3io/bigdata/csv2hive/sh/./generate_hive_tables.sh $nginx_host"
 kubectl -n default-tenant exec -it $shell_container -- /bin/bash -c "$spark_command" 2>&1 | tee -a $log_file

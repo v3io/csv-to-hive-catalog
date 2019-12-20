@@ -13,4 +13,4 @@ fi
 #ngnix host name 
 nginx_host=$1
 
-python /v3io/bigdata/csv2hive/config/generate_hive_tables.py ${nginx_host}
+python /v3io/bigdata/csv2hive/src/generate_hive_tables.py ${nginx_host}
